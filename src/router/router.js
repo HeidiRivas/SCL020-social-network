@@ -34,11 +34,11 @@ const renderTemplate = () => {
 
 }
 
-//const navigate = (path) => { navGuard (next, path, '/login') }//
+// const navigate = (path) => { navGuard (next, path, '/login') }//
 
 
     const initRouter = () => {
-    //navGuard(next,'/', 'login' )//
+    // navGuard(next,'/', 'login' )//
     renderTemplate()
     window.onpopstate = ()=> {renderTemplate()}
 
