@@ -3,21 +3,22 @@ import {initRouter, next} from "../router/router.js"
 const Welcome = () => {
 
     const template = //html
-    `   <header>
+    `   <header class="hd">
     <img src= "./img/logofon.png" alt="logo" class="logo1">
     </header>
-    <h1>Te damos la bienvenida a la primera red social de creadores y fans.
+    <section class="sct">
+    <div class="fcenter">
+    <h1 class="title">Te damos la bienvenida a la primera red social de creadores y fans.
     </h1>
-    <section>
-    <div class="btn1">
+    <div class="btn">
     <button id="start">Iniciar Sesión</button>
     </div>
-    <div class="btn2">
+    <div class="btn">
     <button>Autenticar con Google</button>
     </div>
+    <h2 class="sbtitle">¿No tienes una cuenta? <a href="#" id="reg">Regístrate</a> 
+    </h2></div>
     </section>
-    <h2>¿No tienes una cuenta? <a href="#" id="reg">Regístrate</a> 
-    </h2>
     `
     /*const container = document.getElementById("main-page").innerHTML=template;*/
     const container = document.createElement('div')
