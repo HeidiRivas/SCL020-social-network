@@ -16,7 +16,17 @@ const routes = [
       name:'Login',
       template: Login()
 
-    }
+    },
+    
+    { path:'/register',
+    name:'Register',
+    template: Register()
+
+  },
+  { path:'/home',
+  name:'Home',
+  template: Home()
+}
 ]    
     
 const renderTemplate = () => {

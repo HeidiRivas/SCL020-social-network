@@ -1,6 +1,7 @@
 /*import {login} from '../firebase/auth.js'
 import { navigate} from '../router/router.js'*/
 
+import {next} from "../router/router.js"
 const Login = () => {
 
 const template = // html
