@@ -18,15 +18,15 @@ const routes = [
 
     },
     
-    { path:'/register',
-    name:'Register',
-    template: Register()
+    // { path:'/register',
+    // name:'Register',
+    // template: Register()
 
-  },
-  { path:'/home',
-  name:'Home',
-  template: Home()
-}
+// //   },
+//   { path:'/home',
+//   name:'Home',
+//   template: Home()
+// }
 ]    
     
 const renderTemplate = () => {
