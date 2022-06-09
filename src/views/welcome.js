@@ -32,7 +32,7 @@ let registro = container.querySelector("#reg");
 registro.addEventListener('click', (e)=>{
     e.preventDefault()
 
-next("/login")
+next("/register")
 })
     /* function start(){
     window.location = "/login";
