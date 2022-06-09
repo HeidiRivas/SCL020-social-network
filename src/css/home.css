@@ -1,0 +1,111 @@
+/* Basic styling */
+* {
+	padding: 0;
+	margin: 0;
+  }
+
+  nav {
+	background: #3BACB6;
+	box-sizing: border-box;
+	padding: 5px 20px;
+  }
+  ul {
+	list-style-type: none;
+  }
+  a {
+	color: #ccffcc;
+	text-decoration: none;
+  }
+  a:hover {
+	  color: #005959;
+
+  }
+  .menu li {
+	font-size: large;
+	padding: 15px 5px;
+	white-space: nowrap;
+  }
+  .logo a,
+  .toggle a {
+	font-size: 20px;
+  }
+
+  /* Mobile menu */
+  .menu {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+  }
+  .toggle {
+	order: 1;
+  }
+  .item {
+	width: 100%;
+	text-align: center;
+	order: 3;
+	display: none;
+  }
+  .item.active {
+	display: block;
+  }
+  a::before {
+	display: block;
+	content: '';
+	width: 0%;
+	background: #444;
+	height: 5px;
+	top:0;
+	position: absolute;
+	transition: width 0.2s;
+  }
+  .logo {
+	background-image: url(./fancosfic.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 100px;
+  }
+  /* Tablet menu */
+  @media all and (min-width: 600px) {
+	.menu {
+	  justify-content: center;
+	}
+	.logo {
+	  flex: 1;
+	  background-image: url(./logoF.png);
+	  background-size: 50px;
+	}
+	.toggle {
+	  flex: 1;
+	  text-align: right;
+	}
+	.toggle {
+	  order: 2;
+	}
+	.button.secondary {
+	  border: 0;
+	}
+	
+  }
+  /* Desktop menu */
+  @media all and (min-width: 900px) {
+	.item {
+	  display: block;
+	  width: auto;
+	}
+	.toggle {
+	  display: none;
+	}
+	.logo {
+	  order: 0;
+	  background-image: url(./logoF.png);
+	  background-size: 50px;
+	}
+	.item {
+	  order: 1;
+	}
+	.menu li {
+	  padding: 15px 10px;
+	}
+
+  }
