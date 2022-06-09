@@ -16,12 +16,12 @@ const Home = () => {
     const container = document.createElement('div')
     container.innerHTML = template
     
-    document.querySelector('.toggle').addEventListener('click', function(e){
-      const items = document.querySelectorAll('.item');
-      items.forEach((item)=> {
-          item.classList.toggle('active')
-      })
-   })
+    // document.querySelector('.toggle').addEventListener('click', function(e){
+    //   const items = document.querySelectorAll('.item');
+    //   items.forEach((item)=> {
+    //       item.classList.toggle('active')
+    //   })
+   
 
     return container
 }
