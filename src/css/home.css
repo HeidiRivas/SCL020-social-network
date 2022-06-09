@@ -12,11 +12,11 @@
   ul {
 	list-style-type: none;
   }
-  a {
+  .acolor {
 	color: #ccffcc;
 	text-decoration: none;
   }
-  a:hover {
+  .acolor:hover {
 	  color: #005959;
 
   }
@@ -49,7 +49,7 @@
   .item.active {
 	display: block;
   }
-  a::before {
+  .acolor::before {
 	display: block;
 	content: '';
 	width: 0%;
@@ -82,10 +82,6 @@
 	.toggle {
 	  order: 2;
 	}
-	.button.secondary {
-	  border: 0;
-	}
-	
   }
   /* Desktop menu */
   @media all and (min-width: 900px) {
