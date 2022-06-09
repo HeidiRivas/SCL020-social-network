@@ -9,6 +9,34 @@
   .hd img {
         width: 90%;
     }
+
+    .title{
+      color: white;
+      text-align: center; 
+      margin-top: 5%;
+      display: block;
+      width: 100%;
+      font-size: medium;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  h1{
+    color: aliceblue;
+  }
+
+  h5{
+    color: aliceblue; 
+    display: inline; 
+  }
+
+  .input
+
+  .register_form input{
+    margin-bottom: 10%;
+
+  }
+
   .register {
         display: flex;
         flex-direction: column;
@@ -17,44 +45,48 @@
         width: 500px;
         margin: 0 auto;
         height: 0 auto;
-        margin-top: 40px;
-        border: 5px solid #ffffff;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.7);
-        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16), 0 5px 6px rgba(0, 0, 0, 0.23);
+        margin-top: 20px;
+        /* border: 5px solid #ffffff; */
+        border-radius: 15px;
+        /* box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16), 0 5px 6px rgba(0, 0, 0, 0.23); */
         min-width: 250px;
       }
-   .title{
-        color: white;
-        text-align: center; 
-        margin-top: 5%;
-        display: block;
-        width: 100%;
-        font-size: medium;
-        margin-left: auto;
-        margin-right: auto;
-    }
 
-    .login_form{
+    .register_form{
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.23);
+        background-color: rgba(60, 144, 150, 0.3);
         border: 0;
-        border-radius: 3px;
-        padding: 8px;
+        border-radius: 5px;
+        padding: 30px 8px;
         width: 220px;
         text-align: center;
-        margin-bottom: 10%;
+        /* margin-bottom: 10%; */
+        /* margin-top: 10%; */
     }
-      .input:active,
-      .input:focus {
+      #email_formu:active,
+      #email_formu:focus {
         outline-color: rgb(37, 177, 182);
         /*Borde sin accion */
         /* border: 1px solid red; */
       }
-      input {
+      #email_formu {
         font-family: 'Nunito', sans-serif;
       }
       
-      input::placeholder {
+      #email_formu::placeholder {
+        color: rgb(54, 181, 186);
+      }
+      #pass_formu:active,
+      #pass_formu:focus {
+        outline-color: rgb(37, 177, 182);
+        /*Borde sin accion */
+        /* border: 1px solid red; */
+      }
+      #pass_formu {
+        font-family: 'Nunito', sans-serif;
+      }
+      
+      #pass_formu::placeholder {
         color: rgb(54, 181, 186);
       }
        .sct{
@@ -87,8 +119,7 @@
         font-size: medium;
         align-self: center;
     }
-    
-   
+
    @media (min-width: 380px){
        .hd img {
            width: fit-content;

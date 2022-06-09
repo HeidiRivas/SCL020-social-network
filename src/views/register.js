@@ -6,20 +6,32 @@ const template = // html
 <header class="hd">
     <img src= "./img/logofon.png" alt="logo" class="logo1">
     </header>
-<main class="login_view">
+<main class="register_view">
     <section class="login_card">
      <div class="register">
-        <h1 class="login_form">Registrate</h1>
-        <form id="login-form" class="login_form input">
-           <div class="login_input-row">
-            <input id="email" type="text" placeholder ="Ingresa tu correo">
+        <h1 class="register_form">Regístrate</h1>
+        <form id="register-form" class="register_form">
+           <div class="register_input-row">
+            <input id="email_formu" type="text" placeholder ="Ingresa tu nombre">
            </div>
-           <div class="login__input-row">
-            <input id="pass" type="password" placeholder="Ingresa tu contraseña">
+           <div class="register__input-row">
+           <input id="email_formu" type="text" placeholder ="Ingresa tu usuario">
+          </div>
+           <div class="register___input-row">
+            <input id="pass_formu" type="text" placeholder="Ingresa tu correo">
            </div>
-           <div class="login_input-row login input row centered">
-            <button class="btn_login_btn-primary">Login</button>
+           <div class="register____input-row">
+            <input id="pass_formu" type="password" placeholder="Ingresa tu password ">
            </div>
+           <div class="register_____input-row">
+           <input id="pass_formu" type="password" placeholder="Re-ingresa tu password">
+          </div>
+           <div class="register_input-row login input row centered">
+            <button class="btn_register_btn-primary">Registrar</button>
+           </div>
+           <section class="checkbox"><input type="checkbox">
+           <h5>He leído y acepto los términos y condiciones de uso</h5>
+           </section>
             <small id="error-msg"></small>
         </form>
      </div>
@@ -30,16 +42,16 @@ const template = // html
 const container = document.createElement('div')
 container.innerHTML = template;
 
-/*const form = container.querySelector('#login-form')
-form.addEventListener('submit', (e)=> {
-    e.preventDefault()
+// const form = container.querySelector('#register-form')
+// form.addEventListener('submit', (e)=> {
+//     e.preventDefault()
 
-    const email = container.querySelector('#email').value
-    const pass = container.querySelector('#pass').value
-    const msg = container.querySelector('#error-msg')
+//     const email = container.querySelector('#email').value
+//     const pass = container.querySelector('#pass').value
+//     const msg = container.querySelector('#error-msg')
 
-    if(!email || !pass) return
-})*/
+//     if(!email || !pass) return
+// })
 
     return container
   
