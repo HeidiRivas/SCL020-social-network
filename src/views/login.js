@@ -6,12 +6,12 @@ const Login = () => {
 
 const template = // html
 
-`   <header class="hd">
+` 
+<header class="hd">
 <img src= "./img/logofon.png" alt="logo" class="logo1">
 </header>
       <main class="login_view">
        <section class="login_card">
-        
         <form id="login-form" class="login_form">
         <div class="login_input-row">
          <label for="email"> </label>
