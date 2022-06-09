@@ -1,8 +1,10 @@
 import {next} from "../router/router.js"
+
 const Home = () => {
 
     const template = //html
-    `   
+    ` 
+    hola  
     `
 
     const container = document.createElement('div')
@@ -11,4 +13,4 @@ const Home = () => {
     return container
 }
 
-export {Home}
+export default Home

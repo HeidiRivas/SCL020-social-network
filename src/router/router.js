@@ -4,6 +4,7 @@ import Home from '../views/home.js'*/
 
 import Welcome from '../views/welcome.js'
 import Login from '../views/login.js'
+import Home from '../views/home.js'
 
 const routes = [
     { path:'/',
@@ -15,14 +16,13 @@ const routes = [
    { path:'/login',
       name:'Login',
       template: Login()
-
     },
-    
-    { path:'/register',
+   
+  /*  { path:'/register',
     name:'Register',
     template: Register()
 
-  },
+  },*/
   { path:'/home',
   name:'Home',
   template: Home()
