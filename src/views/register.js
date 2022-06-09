@@ -26,8 +26,8 @@ const template = // html
            <div class="register_____input-row">
            <input id="pass_formu" type="password" placeholder="Re-ingresa tu password">
           </div>
-           <div class="register_input-row login input row centered">
-            <button class="btn_register_btn-primary">Registrar</button>
+           <div class="btn2">
+            <button class="btn_register">Registrar</button>
            </div>
            <section class="checkbox"><input type="checkbox">
            <h5>He leído y acepto los términos y condiciones de uso</h5>

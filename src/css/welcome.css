@@ -33,10 +33,11 @@
      width: 50%;
  }
  
-.btn button{
+.btn1 .aut_btn {
      width: 120px;
      height: 40px;
      background: #3BACB6;
+     box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.23);
      border-radius: 10px;
      border-color: #3BACB6;
      color: white;
@@ -48,6 +49,10 @@
      margin-right: auto;
      
  
+ }
+ #start{
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.23);
+
  }
 .sbtitle{
      color: white;
