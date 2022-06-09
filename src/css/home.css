@@ -60,7 +60,7 @@
 	transition: width 0.2s;
   }
   .logo {
-	background-image: url(./fancosfic.png);
+	background-image: url(../img/fancosfic.png);
 	background-repeat: no-repeat;
 	background-size: 100%;
 	width: 100px;
@@ -72,7 +72,7 @@
 	}
 	.logo {
 	  flex: 1;
-	  background-image: url(./logoF.png);
+	  background-image: url(../img/logoF.png);
 	  background-size: 50px;
 	}
 	.toggle {
@@ -98,7 +98,7 @@
 	}
 	.logo {
 	  order: 0;
-	  background-image: url(./logoF.png);
+	  background-image: url(../img/logoF.png);
 	  background-size: 50px;
 	}
 	.item {
