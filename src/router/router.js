@@ -4,6 +4,9 @@ import Home from '../views/home.js'*/
 
 import Welcome from '../views/welcome.js'
 import Login from '../views/login.js'
+import Register from '../views/register.js'
+import Home from '../views/home.js'
+
 
 const routes = [
     { path:'/',
@@ -15,8 +18,16 @@ const routes = [
    { path:'/login',
       name:'Login',
       template: Login()
-
-    }
+    },
+   
+  { path:'/register',
+    name:'Register',
+    template: Register()
+  },
+  { path:'/home',
+  name:'Home',
+  template: Home()
+}
 ]    
     
 const renderTemplate = () => {
@@ -34,11 +45,11 @@ const renderTemplate = () => {
 
 }
 
-//const navigate = (path) => { navGuard (next, path, '/login') }//
+// const navigate = (path) => { navGuard (next, path, '/login') }//
 
 
     const initRouter = () => {
-    //navGuard(next,'/', 'login' )//
+    // navGuard(next,'/', 'login' )//
     renderTemplate()
     window.onpopstate = ()=> {renderTemplate()}
 

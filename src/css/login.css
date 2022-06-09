@@ -1,0 +1,64 @@
+.login_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15%;
+    width: 50%;
+
+}
+
+.email{
+    width: 200px;
+    height: 40px;
+    background: #3BACB6;
+    border-radius: 10px;
+    border-color: #3BACB6;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    margin: 5px;
+    text-align: center;
+    font-size: small;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#email::placeholder{
+    color:white;
+}
+
+.pass{
+    width: 200px;
+    height: 40px;
+    background: #3BACB6;
+    border-radius: 10px;
+    border-color: #3BACB6;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    margin: 5px;
+    text-align: center;
+    font-size: small;
+    margin-left: auto;
+    margin-right: auto
+}
+#pass::placeholder{
+    color:white;
+
+}
+    
+button{
+    width: 120px;
+    height: 40px;
+    background: #3BACB6;
+    border-radius: 10px;
+    border-color: #3BACB6;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    margin: 5px;
+    text-align: center;
+    font-size: small;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    }

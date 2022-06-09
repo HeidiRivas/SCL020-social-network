@@ -1,4 +1,5 @@
 import {next} from "../router/router.js"
+
 const Home = () => {
 
     const template = //html
@@ -11,6 +12,7 @@ const Home = () => {
       <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
     </ul>
   </nav>
+
     `
     document.querySelector('.toggle').addEventListener('click', function(e){
       const items = document.querySelectorAll('.item');
@@ -25,4 +27,4 @@ const Home = () => {
     return container
 }
 
-export {Home}
+export default Home
