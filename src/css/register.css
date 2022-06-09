@@ -1,0 +1,97 @@
+.hd{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    }
+  .hd img {
+        width: 90%;
+    }
+  .register {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        margin: 0 auto;
+        height: 0 auto;
+        margin-top: 40px;
+        border: 5px solid #ffffff;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16), 0 5px 6px rgba(0, 0, 0, 0.23);
+        min-width: 250px;
+      }
+   .title{
+        color: white;
+        text-align: center; 
+        margin-top: 5%;
+        display: block;
+        width: 100%;
+        font-size: medium;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .login_form{
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.23);
+        border: 0;
+        border-radius: 3px;
+        padding: 8px;
+        width: 220px;
+        text-align: center;
+        margin-bottom: 10%;
+    }
+      .input:active,
+      .input:focus {
+        outline-color: rgb(37, 177, 182);
+        /*Borde sin accion */
+        /* border: 1px solid red; */
+      }
+      input {
+        font-family: 'Nunito', sans-serif;
+      }
+      
+      input::placeholder {
+        color: rgb(54, 181, 186);
+      }
+       .sct{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        width: 50%;
+    }
+    
+   .btn button{
+        width: 120px;
+        height: 40px;
+        background: #3BACB6;
+        border-radius: 10px;
+        border-color: #3BACB6;
+        color: white;
+        font-family: 'Nunito', sans-serif;
+        margin: 5px;
+        text-align: center;
+        font-size: small;
+        margin-left: auto;
+        margin-right: auto;
+        
+    
+    }
+   .sbtitle{
+        color: white;
+        text-align: center; 
+        margin-top: 5%; 
+        font-size: medium;
+        align-self: center;
+    }
+    
+   
+   @media (min-width: 380px){
+       .hd img {
+           width: fit-content;
+       }
+   
+   }
