@@ -5,6 +5,7 @@ import Home from '../views/home.js'*/
 import Welcome from '../views/welcome.js'
 import Login from '../views/login.js'
 import Register from '../views/register.js'
+import Home from '../views/home.js'
 
 
 const routes = [
@@ -17,18 +18,16 @@ const routes = [
    { path:'/login',
       name:'Login',
       template: Login()
-
     },
-    
-    { path:'/register',
+   
+  { path:'/register',
     name:'Register',
     template: Register()
-  }
-
-//   { path:'/home',
-//   name:'Home',
-//   template: Home()
-// }
+  },
+  { path:'/home',
+  name:'Home',
+  template: Home()
+}
 ]    
     
 const renderTemplate = () => {
