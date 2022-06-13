@@ -8,21 +8,26 @@ const Home = () => {
       <li class="item"><a class="acolor" href="#">Home</a></li>
       <li class="item"><a class="acolor" href="#">Grupos</a></li>
       <li class="item"><a class="acolor" href="#">Eventos</a></li>
-      <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
-    </ul>
+      <li class="toggle"><a href="#" id="list"><i class="fas fa-bars"></i></a></li>
+    </ul>                
   </nav>
     `
 
     const container = document.createElement('div')
     container.innerHTML = template
     
-    document.querySelector('.toggle').addEventListener('click', function(e){
-      const items = document.querySelectorAll('.item');
-      items.forEach((item)=> {
-          item.classList.toggle('active')
-      })
     
-      return container
-    })
-  }
-    export default Home
+  
+container.querySelector('.toggle').addEventListener ('click', function(e){
+     const items = document.querySelectorAll('.item');
+     
+      items.forEach((item)=> {
+         element.classList.toggle('active')
+     });
+    });
+   
+
+    return container
+}
+
+export default Home

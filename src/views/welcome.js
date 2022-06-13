@@ -34,11 +34,6 @@ registro.addEventListener('click', (e)=>{
 
 next("/register")
 })
-    /* function start(){
-    window.location = "/login";
-    if (btn) {
-    btn.addEventListener("click", start);
-    }*/
 
     return container
       
