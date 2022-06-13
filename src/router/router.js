@@ -24,9 +24,10 @@ const routes = [
     name:'Register',
     template: Register()
   },
+
   { path:'/home',
-  name:'Home',
-  template: Home()
+    name:'Home',
+    template: Home()
 }
 ]    
     
