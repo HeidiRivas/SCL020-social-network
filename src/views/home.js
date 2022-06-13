@@ -18,11 +18,11 @@ const Home = () => {
     
     
   
-container.querySelector('.toggle').addEventListener ('click', function(e){
+    container.querySelector('.toggle').addEventListener ('click', function(e){
      const items = document.querySelectorAll('.item');
      
       items.forEach((item)=> {
-         element.classList.toggle('active')
+         item.classList.toggle('active')
      });
     });
    
