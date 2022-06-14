@@ -14,7 +14,7 @@ const Welcome = () => {
          <button id="start">Iniciar Sesión</button>
         </div>
         <div class="btn1">
-         <button class="aut_btn">Autenticar con Google</button>
+         <button class="aut_btn" >Autenticar con Google</button>
         </div>
         <h2 class="sbtitle">¿No tienes una cuenta? <a href="#" id="reg">Regístrate</a> 
         </h2></div>
