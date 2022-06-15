@@ -4,6 +4,6 @@ coverage/
 node_modules/
 .yarn.lock
 package-lock.json
+src/firebase/config.js  
 
-#Ignora el archivo config.js
-config.js
+
