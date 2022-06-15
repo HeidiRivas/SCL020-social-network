@@ -5,6 +5,5 @@ node_modules/
 .yarn.lock
 package-lock.json
 
-#Ignora la carpeta config.js
-
+#Ignora el archivo config.js
 config.js
