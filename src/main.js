@@ -1,7 +1,7 @@
 import {initRouter} from "./router/router.js"
-import {login, logout} from "../src/firebase/auth.js"
+import {login} from "./firebase/auth.js"
 import Welcome from "./views/welcome.js"
-
+import firebaseConfig from "./firebase/config.js"
   initRouter()
 
   
