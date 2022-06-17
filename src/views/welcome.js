@@ -1,5 +1,7 @@
 import {initRouter, next} from "../router/router.js"
 
+import {loginWhithGoogle} from "../firebase/auth.js"
+
 const Welcome = () => {
 
     const template = //html
@@ -14,13 +16,13 @@ const Welcome = () => {
          <button id="start">Iniciar Sesión</button>
         </div>
         <div class="btn1">
-         <button class="aut_btn" >Autenticar con Google</button>
+         <button class="aut_btn" id="bg" >Autenticar con Google</button>
         </div>
         <h2 class="sbtitle">¿No tienes una cuenta? <a href="#" id="reg">Regístrate</a> 
         </h2></div>
     </section>
     `
-    /*const container = document.getElementById("main-page").innerHTML=template;*/
+    
     const container = document.createElement('div')
     container.innerHTML = template
 
@@ -28,6 +30,12 @@ const Welcome = () => {
     btn.addEventListener('click', (e)=>{
     next("/login")
 })
+
+let btnGoogle = container.querySelector("#bg");
+    btnGoogle.addEventListener('click', (e)=>{
+    loginWhithGoogle()
+}) 
+
 let registro = container.querySelector("#reg");
 registro.addEventListener('click', (e)=>{
     e.preventDefault()

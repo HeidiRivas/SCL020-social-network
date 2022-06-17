@@ -44,7 +44,7 @@ form.addEventListener('submit', (e)=> {
 })
 let btn = container.querySelector(".btn_login_btn-primary");
     btn.addEventListener('click', (e)=>{
-    next("/home")
+    next("/home")/*try catch*/
 })  
     return container
   
