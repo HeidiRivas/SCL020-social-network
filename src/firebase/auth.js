@@ -1,10 +1,10 @@
 
-import { signInWithEmailAndPassword, auth,signInWithPopup, GoogleAuthProvider,getAuth } from "./init.js"
+import { signInWithEmailAndPassword, auth,signInWithPopup, GoogleAuthProvider,getAuth, createUserWithEmailAndPassword } from "./init.js"
+// importe el  createUserWithEmailAndPassword del auth
 
-const loginWhithGoogle = ()=> {
 
+const loginWithGoogle = ()=> {
 const provider = new GoogleAuthProvider();
-
 const auth = getAuth();
 signInWithPopup(auth, provider)
   .then((result) => {
@@ -25,14 +25,44 @@ signInWithPopup(auth, provider)
     // ...
   });
 }
+//agregue esta funcion de register me traje el codigo de firebase
+const registerNewUser = (email,password)=> {
+  const auth = getAuth();
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+  }
+//copie de firebase código de login arriba y en el init ya esta singinwhit...
+  const login = async(email, password)=> {
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      }); 
+    
+}
 
-const login = async(email, password)=> {
+/*const login = async(email, password)=> {
     try {
         await signInWithEmailAndPassword(auth, email, password)
     } catch(error) {
         throw error.message
     }
-}
+}*/
 
 
-export { login,loginWhithGoogle }
+export { login,loginWithGoogle,registerNewUser }

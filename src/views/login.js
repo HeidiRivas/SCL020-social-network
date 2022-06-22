@@ -1,7 +1,8 @@
-/*import {login} from '../firebase/auth.js'
-import { navigate} from '../router/router.js'*/
+import {login} from '../firebase/auth.js'//active este import q viene del export de auth
+/*import { navigate} from '../router/router.js'*/
 
 import {next} from "../router/router.js"
+
 const Login = () => {
 
 const template = // html
@@ -22,7 +23,7 @@ const template = // html
     <input class="pass" id="pass" type="password" placeholder="Ingresa tu contraseña">
     </div>
     <div class="login_input-row login input row centered">
-        <button class="btn_login_btn-primary" id="login">Ingresar</button>
+        <button class="btn_login_btn-primary" type="submit" id="login">Ingresar</button>
     </div>
     <small id="error-msg"></small>
    </form>
@@ -31,9 +32,9 @@ const template = // html
 `
 const container = document.createElement('div')
 container.innerHTML = template;
-
 const form = container.querySelector('#login-form')
-form.addEventListener('submit', (e)=> {
+//asi funciona la ruta
+/*form.addEventListener('submit', (e)=> {
     e.preventDefault()
 
     const email = container.querySelector('#email').value
@@ -44,11 +45,55 @@ form.addEventListener('submit', (e)=> {
 })
 let btn = container.querySelector(".btn_login_btn-primary");
     btn.addEventListener('click', (e)=>{
-    next("/home")/*try catch*/
-})  
+    next("/home")
+//})
+   // return container
+  
+//}*/
+//el intento: deja pasar al home sin verificar
+form.addEventListener('submit', (e)=> {
+    e.preventDefault()
+
+    const email = container.querySelector('#email').value
+    const password = container.querySelector('#pass').value
+    const msg = container.querySelector('#error-msg')
+    if(!email || !pass) return
+    try{
+        let result = login(email, password)
+        alert('usuario autorizado')
+        next("/home")
+    } catch (error) {
+        //console.error(error);
+         throw error.message
+        }
+   
+});
     return container
   
 }
+
+
+//esta es la que hice igual a lo q me sugirio mauro para register debo chequear como conectarla aqui pero no hace nada
+/*form.addEventListener('submit', (e)=> {
+    e.preventDefault()
+
+    const email = container.querySelector('#email').value
+    const password = container.querySelector('#pass').value
+    const msg = container.querySelector('#error-msg')
+    if(!email || !pass) return
+    const login = async(email, password)=> {
+        try {
+            await login(email, password)
+            next("/home")
+        } catch(error) {
+            throw error.message
+        }
+        console.log(login)
+    }
+});
+    return container
+  
+}*/
 
 
 export default Login

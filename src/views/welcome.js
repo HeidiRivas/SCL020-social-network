@@ -1,6 +1,6 @@
 import {initRouter, next} from "../router/router.js"
 
-import {loginWhithGoogle} from "../firebase/auth.js"
+import {loginWithGoogle} from "../firebase/auth.js"
 
 const Welcome = () => {
 
@@ -33,7 +33,7 @@ const Welcome = () => {
 
 let btnGoogle = container.querySelector("#bg");
     btnGoogle.addEventListener('click', (e)=>{
-    loginWhithGoogle()
+    loginWithGoogle()
 }) 
 
 let registro = container.querySelector("#reg");

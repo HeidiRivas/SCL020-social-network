@@ -1,4 +1,7 @@
 import {next} from "../router/router.js"
+import {registerNewUser} from "../firebase/auth.js"
+//import { async } from "regenerator-runtime"
+
 const Register = () => {
 
 const template = // html
@@ -11,23 +14,15 @@ const template = // html
      <div class="register">
         <h1 class="register_form">Regístrate</h1>
         <form id="register-form" class="register_form">
-           <div class="register_input-row">
-            <input id="email_formu" type="text" placeholder ="Ingresa tu nombre">
-           </div>
-           <div class="register__input-row">
-           <input id="email_formu" type="text" placeholder ="Ingresa tu usuario">
-          </div>
+           
            <div class="register___input-row">
-            <input id="pass_formu" type="text" placeholder="Ingresa tu correo">
+            <input id="email" type="text" placeholder="Ingresa tu correo">
            </div>
            <div class="register____input-row">
-            <input id="pass_formu" type="password" placeholder="Ingresa tu password ">
+            <input id="pass" type="password" placeholder="Ingresa tu password ">
            </div>
-           <div class="register_____input-row">
-           <input id="pass_formu" type="password" placeholder="Re-ingresa tu password">
-          </div>
            <div class="btn2">
-            <button class="btn_register">Registrar</button>
+            <button class="btn_register" type="submit">Registrar</button>
            </div>
            <section class="checkbox"><input type="checkbox">
            <h5>He leído y acepto los términos y condiciones de uso</h5>
@@ -38,23 +33,29 @@ const template = // html
     </section>
 </main>
 `
-/*const container = document.getElementById("login-page").innerHTML=template;*/
+
 const container = document.createElement('div')
 container.innerHTML = template;
 
-// const form = container.querySelector('#register-form')
-// form.addEventListener('submit', (e)=> {
-//     e.preventDefault()
-
-//     const email = container.querySelector('#email').value
-//     const pass = container.querySelector('#pass').value
-//     const msg = container.querySelector('#error-msg')
-
-//     if(!email || !pass) return
-// })
+const form = container.querySelector('#register-form')
+form.addEventListener('submit', (e)=> {
+  e.preventDefault()
+  const email = container.querySelector('#email').value
+  const password = container.querySelector('#pass').value
+  const msg = container.querySelector('#error-msg')
+    try{
+        let result = registerNewUser(email, password)
+        console.log(result)
+        alert('usuario registrado')
+        next("/home")
+    } catch (error) {
+        console.error(error);
+        // throw error.message
+        }
+ });
 
     return container
-  
+ 
 }
 
 
