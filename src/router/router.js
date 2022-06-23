@@ -1,6 +1,6 @@
-/*import { navGuard} from './firebase/auth.js'
+/*import { navGuard} from './firebase/auth.js'*/
 
-import Home from '../views/home.js'*/
+
 
 import Welcome from '../views/welcome.js'
 import Login from '../views/login.js'

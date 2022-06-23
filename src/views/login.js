@@ -1,3 +1,4 @@
+
 import {login} from '../firebase/auth.js'//active este import q viene del export de auth
 /*import { navigate} from '../router/router.js'*/
 
@@ -51,7 +52,7 @@ let btn = container.querySelector(".btn_login_btn-primary");
   
 //}*/
 //el intento: deja pasar al home sin verificar
-form.addEventListener('submit', (e)=> {
+form.addEventListener('submit', async (e)=> {
     e.preventDefault()
 
     const email = container.querySelector('#email').value
@@ -59,12 +60,12 @@ form.addEventListener('submit', (e)=> {
     const msg = container.querySelector('#error-msg')
     if(!email || !pass) return
     try{
-        let result = login(email, password)
+        let result = await login(email, password)
         alert('usuario autorizado')
         next("/home")
     } catch (error) {
-        //console.error(error);
-         throw error.message
+        console.error(error);
+         //throw error.message
         }
    
 });

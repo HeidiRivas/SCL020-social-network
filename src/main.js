@@ -6,13 +6,4 @@ import Welcome from "./views/welcome.js"
   initRouter()
 
   
-  /*const buttonLogin = document.querySelector(".aut_btn");
-  console.log(buttonLogin);
-  buttonLogin.addEventListener("click", async (e) => {
-    try {
-      await login();
-    } catch (error) {
-
-    }
-*/  
- 
+  

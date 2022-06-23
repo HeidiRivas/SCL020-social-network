@@ -43,16 +43,20 @@ const registerNewUser = (email,password)=> {
 //copie de firebase código de login arriba y en el init ya esta singinwhit...
   const login = async(email, password)=> {
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+   
+      try{
         // Signed in
+        
+        const userCredential = await signInWithEmailAndPassword(auth, email, password)
         const user = userCredential.user;
+        return user
         // ...
-      })
-      .catch((error) => {
+      }
+      catch(error) {
         const errorCode = error.code;
         const errorMessage = error.message;
-      }); 
+        throw new Error(errorMessage)
+      }; 
     
 }
 
