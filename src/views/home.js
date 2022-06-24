@@ -1,4 +1,5 @@
 // import {next} from "../router/router.js"
+import {savePost} from '../firebase/post.js'
 const Home = () => {
 
     const template = //html
@@ -38,8 +39,12 @@ const Home = () => {
     });
     container.querySelector('#postNew').addEventListener('submit', (e)=> {
       e.preventDefault()
-     console.log(postNew['post'].value) 
-
+      const textArea = container.querySelector('#post').value
+      const data={
+       content: textArea,
+       like:0
+     }
+     savePost(data)
     })
    
 
