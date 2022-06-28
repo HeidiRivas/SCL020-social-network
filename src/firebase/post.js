@@ -11,4 +11,24 @@ const savePost = async (data)=> {
       }
 }
 
-export {savePost}
+const listPost = async ()=> {
+  const querySnapShot = await getDocs(collection(db, "post"));
+  
+  const taskContainer = document.getElementById("task-container");
+  
+   
+ let html = ''
+  querySnapShot.forEach(doc => {
+     html += `
+     <div>
+     <h3> ${doc.data().content}</h3>
+     </div>
+    `
+  });
+ 
+taskContainer.innerHTML= html
+ 
+  }
+  
+
+export {savePost,listPost}

@@ -52,9 +52,9 @@ const renderTemplate = () => {
     const initRouter = () => {
     // navGuard(next,'/', 'login' )//
     renderTemplate()
-    window.onpopstate = ()=> {renderTemplate()}
+    window.onpopstate = ()=> {renderTemplate()
 
-
+    }
 }
 
 export {next, initRouter}

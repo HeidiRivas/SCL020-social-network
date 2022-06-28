@@ -2,6 +2,8 @@ import {initRouter, next} from "../router/router.js"
 
 import {loginWithGoogle} from "../firebase/auth.js"
 
+
+
 const Welcome = () => {
 
     const template = //html
@@ -32,9 +34,19 @@ const Welcome = () => {
 })
 
 let btnGoogle = container.querySelector("#bg");
-    btnGoogle.addEventListener('click', (e)=>{
-    loginWithGoogle()
-}) 
+    btnGoogle.addEventListener('click', async  (e)=>{
+       
+    try{
+        let result = await loginWithGoogle()
+        alert('usuario autorizado')
+        next("/home")
+        
+    } catch (error) {
+        console.error(error);
+         //throw error.message
+        }
+    
+});
 
 let registro = container.querySelector("#reg");
 registro.addEventListener('click', (e)=>{

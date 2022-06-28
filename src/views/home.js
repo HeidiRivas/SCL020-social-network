@@ -1,5 +1,5 @@
 // import {next} from "../router/router.js"
-import {savePost} from '../firebase/post.js'
+import { savePost} from '../firebase/post.js'
 const Home = () => {
 
     const template = //html
@@ -19,9 +19,11 @@ const Home = () => {
   <button id="newPost" class="newPost"> Nuevo Post</button>
   </div>
   </form>
+  
   <h2 class="timeline"> Cosplay --------------------Fanfics------------------------------Gamer Word</h2>
   (timeline)
   </main>
+  <div id="task-container"></div>
     `
 //1.- coloque un text area y le puse un botón quite la opción de redimensionar en css, lo meti en un form
 //2.traje el formulario y le pedi q tome el value del text área
@@ -37,7 +39,8 @@ const Home = () => {
          item.classList.toggle('active')
      });
     });
-    container.querySelector('#postNew').addEventListener('submit', (e)=> {
+   const postNew= container.querySelector('#postNew');
+  postNew.addEventListener('submit', (e)=> {
       e.preventDefault()
       const textArea = container.querySelector('#post').value
       const data={
@@ -45,6 +48,7 @@ const Home = () => {
        like:0
      }
      savePost(data)
+     postNew.reset()
     })
    
 

@@ -1,12 +1,13 @@
 
+
+
 import { signInWithEmailAndPassword, auth,signInWithPopup, GoogleAuthProvider,getAuth, createUserWithEmailAndPassword } from "./init.js"
-// importe el  createUserWithEmailAndPassword del auth
 
 
-const loginWithGoogle = ()=> {
+const loginWithGoogle = async()=> {
 const provider = new GoogleAuthProvider();
 const auth = getAuth();
-signInWithPopup(auth, provider)
+const result = await signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -25,6 +26,7 @@ signInWithPopup(auth, provider)
     // ...
   });
 }
+
 //agregue esta funcion de register me traje el codigo de firebase
 const registerNewUser = (email,password)=> {
   const auth = getAuth();
