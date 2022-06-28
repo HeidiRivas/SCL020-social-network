@@ -118,3 +118,12 @@
      font-family: 'Nunito', sans-serif;
 	 margin-left: 50px;
   }
+
+.postOld{
+	border: solid black;
+	margin: 20px;
+}
+.sinLike-img{
+	height: 5px;
+	width: 5px;
+}
