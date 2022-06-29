@@ -23,11 +23,16 @@ const listPost = async ()=> {
  let html = ''
   querySnapShot.forEach(doc => {
      html += `
-     <div class= 'postOld'>
-     <h3> ${doc.data().content}</h3>
-     <button>Editar</button>
-     <button>Borrar</button>
-    <a href='../img/conLike.png'><img src='../img/sinLike.png' class="sinLike" ></a>
+     <div class="postOld">
+      <div> ${doc.data().content}
+      <br>
+     <button class="btnedit"></button>
+     <button class="btndel"></button>
+     <button class="like"></button>
+     <button class="unlike"></button>
+      </div>
+
+
      </div>
     `
   });

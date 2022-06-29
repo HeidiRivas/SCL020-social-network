@@ -13,15 +13,12 @@ const Home = () => {
     </ul>                
   </nav>
   <main>
-  <form id="postNew">
+  <form class="divpost" id="postNew">
   <textarea name="post" id="post" cols="100" rows="10"></textarea>
-  <div>
-  <button id="newPost" class="newPost"> Nuevo Post</button>
+  <button id="newPost" class="btn"> Nuevo Post</button>
   </div>
   </form>
   
-  <h2 class="timeline"> Cosplay --------------------Fanfics------------------------------Gamer Word</h2>
-  (timeline)
   </main>
   <div id="task-container"></div>
     `
