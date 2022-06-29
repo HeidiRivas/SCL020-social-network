@@ -1,5 +1,6 @@
 
 import {login} from '../firebase/auth.js'//active este import q viene del export de auth
+
 /*import { navigate} from '../router/router.js'*/
 
 import {next} from "../router/router.js"

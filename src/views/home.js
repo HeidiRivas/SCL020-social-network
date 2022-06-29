@@ -1,5 +1,7 @@
 // import {next} from "../router/router.js"
-import { savePost} from '../firebase/post.js'
+import {  savePost} from '../firebase/post.js'
+
+
 const Home = () => {
 
     const template = //html

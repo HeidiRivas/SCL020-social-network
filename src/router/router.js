@@ -6,6 +6,7 @@ import Welcome from '../views/welcome.js'
 import Login from '../views/login.js'
 import Register from '../views/register.js'
 import Home from '../views/home.js'
+import { listPost } from '../firebase/post.js'
 
 
 const routes = [
@@ -43,7 +44,7 @@ const renderTemplate = () => {
     const view = routes.filter(route => route.path === path)[0] 
     history.pushState({}, view.name, view.path) 
     renderTemplate()
-
+    listPost()
 }
 
 // const navigate = (path) => { navGuard (next, path, '/login') }//
