@@ -33,7 +33,7 @@
      width: 50%;
  }
  
-.btn1 .aut_btn {
+.btn, .aut_btn {
      width: 120px;
      height: 40px;
      background: #3BACB6;
