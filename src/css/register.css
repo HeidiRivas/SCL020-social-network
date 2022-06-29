@@ -43,7 +43,10 @@
 
   .register_form input{
     margin-bottom: 10%;
-
+  }
+  .register___input-row {
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 
   .register {
@@ -62,16 +65,21 @@
       }
 
     .register_form{
-        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.23);
-        background-color: rgba(60, 144, 150, 0.4);
-        border: 0;
-        border-radius: 5px;
-        padding: 30px 8px;
-        width: 220px;
         text-align: center;
-        /* margin-bottom: 10%; */
-        /* margin-top: 10%; */
     }
+    #email::placeholder{
+      color:rgb(29, 139, 130);
+      font-family: 'Nunito', sans-serif;
+  
+  }
+    #pass::placeholder{
+    color:rgb(29, 139, 130);
+    font-family: 'Nunito', sans-serif;
+  
+  }
+  
+    
+    
       #email_formu:active,
       #email_formu:focus {
         outline-color: rgb(37, 177, 182);
@@ -81,10 +89,10 @@
       #email_formu {
         font-family: 'Nunito', sans-serif;
       }
-      
+  /*     
       #email_formu::placeholder {
         color: rgb(255, 255, 255);
-      }
+      } */
       #pass_formu:active,
       #pass_formu:focus {
         outline-color: rgb(37, 177, 182);
@@ -96,15 +104,10 @@
       }
       
       #pass_formu::placeholder {
-        color: rgb(255, 255, 255);
+        color: rgb(0, 0, 0);
         
       }
-       .sct{
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 5%;
-        width: 50%;
-    }
+  
     
    .btn2 .btn_register{
         width: 120px;
