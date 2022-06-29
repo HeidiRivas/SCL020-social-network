@@ -18,11 +18,11 @@ const template = // html
         <form id="login-form" class="login_form">
         <div class="login_input-row">
          <label for="email"> </label>
-        <input class="email" id="email" type="text" placeholder ="Ingresa tu correo">
+        <input class="email2" id="email" type="text" placeholder ="Ingresa tu correo">
     </div>
     <div class="login__input-row">
     <label for="pass"></label>
-    <input class="pass" id="pass" type="password" placeholder="Ingresa tu contraseña">
+    <input class="pass2" id="pass" type="password" placeholder="Ingresa tu contraseña">
     </div>
     <div class="login_input-row login input row centered">
         <button class="btn_login_btn-primary" type="submit" id="login">Ingresar</button>

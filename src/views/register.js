@@ -12,8 +12,9 @@ const template = // html
 <main class="register_view">
     <section class="login_card">
      <div class="register">
+        
+        <form id="register-form" class="sct">
         <h1 class="register_form">Regístrate</h1>
-        <form id="register-form" class="register_form">
            
            <div class="register___input-row">
             <input id="email" type="text" placeholder="Ingresa tu correo">
