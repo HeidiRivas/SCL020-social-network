@@ -1,5 +1,5 @@
 
-import {db, collection, getDocs,addDoc} from './init.js'
+import {db, collection, getDocs,addDoc,onSnapshot} from './init.js'
 
 
 const savePost = async (data)=> {
@@ -11,17 +11,28 @@ const savePost = async (data)=> {
       }
 }
 
+
+ 
+
 const listPost = async ()=> {
   const querySnapShot = await getDocs(collection(db, "post"));
-  
+  console.log(querySnapShot)
   const taskContainer = document.getElementById("task-container");
   console.log(taskContainer)
    
  let html = ''
   querySnapShot.forEach(doc => {
      html += `
-     <div>
-     <h3> ${doc.data().content}</h3>
+     <div class="postOld">
+      <div> ${doc.data().content}
+      <br>
+     <button class="btnedit"></button>
+     <button class="btndel"></button>
+     <button class="like"></button>
+     <button class="unlike"></button>
+      </div>
+
+
      </div>
     `
   });
