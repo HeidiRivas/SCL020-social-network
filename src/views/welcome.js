@@ -14,8 +14,8 @@ const Welcome = () => {
      <div class="fcenter">
         <h1 class="title">Te damos la bienvenida a la primera red social de creadores y fans.
          </h1>
-        <div class="btn">
-         <button id="start">Iniciar Sesión</button>
+        <div>
+         <button  class="btn" id="start">Iniciar Sesión</button>
         </div>
         <div class="btn1">
          <button class="aut_btn" id="bg" >Autenticar con Google</button>
