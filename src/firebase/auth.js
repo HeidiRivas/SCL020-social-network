@@ -14,6 +14,7 @@ const result = await signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
+    console.log(user)
     // ...
   }).catch((error) => {
     // Handle Errors here.
@@ -26,6 +27,8 @@ const result = await signInWithPopup(auth, provider)
     // ...
   });
 }
+
+
 
 //agregue esta funcion de register me traje el codigo de firebase
 const registerNewUser = (email,password)=> {

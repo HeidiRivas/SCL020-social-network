@@ -16,7 +16,7 @@ const savePost = async (data)=> {
 
 const listPost = async ()=> {
   const querySnapShot = await getDocs(collection(db, "post"));
-  console.log(querySnapShot)
+  
   const taskContainer = document.getElementById("task-container");
   console.log(taskContainer)
    
@@ -37,7 +37,7 @@ const listPost = async ()=> {
     `
   });
  
-taskContainer.innerHTML= html
+taskContainer.innerHTML = html
  
   }
   
