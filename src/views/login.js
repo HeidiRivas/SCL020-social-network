@@ -14,15 +14,16 @@ const template = // html
 <img src= "./img/logofon.png" alt="logo" class="logo1">
 </header>
       <main class="login_view">
-       <section class="login_card">
+       <section class="sct">
         <form id="login-form" class="login_form">
+        <h1> Login </h1>
         <div class="login_input-row">
          <label for="email"> </label>
         <input class="email2" id="email" type="text" placeholder ="Ingresa tu correo">
     </div>
     <div class="login__input-row">
     <label for="pass"></label>
-    <input class="pass2" id="pass" type="password" placeholder="Ingresa tu contraseña">
+    <input class="email2" id="pass" type="password" placeholder="Ingresa tu contraseña">
     </div>
     <div class="login_input-row login input row centered">
         <button class="btn_login_btn-primary" type="submit" id="login">Ingresar</button>

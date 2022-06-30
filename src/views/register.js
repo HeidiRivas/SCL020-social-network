@@ -15,7 +15,6 @@ const template = // html
         
         <form id="register-form" class="sct">
         <h1 class="register_form">Regístrate</h1>
-           
            <div class="register___input-row">
             <input id="email" type="text" placeholder="Ingresa tu correo">
            </div>

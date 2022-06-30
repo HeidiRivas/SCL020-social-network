@@ -70,11 +70,14 @@
     #email::placeholder{
       color:rgb(29, 139, 130);
       font-family: 'Nunito', sans-serif;
+      background-color: aliceblue;
   
   }
     #pass::placeholder{
     color:rgb(29, 139, 130);
     font-family: 'Nunito', sans-serif;
+    background-color: aliceblue;
+
   
   }
   
