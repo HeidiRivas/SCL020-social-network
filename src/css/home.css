@@ -109,6 +109,11 @@
 	margin-bottom: 5px;
 	margin-left: auto;
 	margin-right: auto;
+	/* float: center;
+    display: flex;
+    align-items: center;
+    word-break:break-all;
+	overflow: auto; */
 
 }
 .btndel,.btnedit, .unlike, .like {
