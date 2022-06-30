@@ -18,7 +18,7 @@ const listPost = async ()=> {
   const querySnapShot = await getDocs(collection(db, "post"));
   
   const taskContainer = document.getElementById("task-container");
-  
+  console.log(taskContainer)
    
  let html = ''
   querySnapShot.forEach(doc => {
