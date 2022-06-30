@@ -4,6 +4,7 @@ import {loginWithGoogle} from "../firebase/auth.js"
 
 
 
+
 const Welcome = () => {
 
     const template = //html
@@ -34,12 +35,12 @@ const Welcome = () => {
 })
 
 let btnGoogle = container.querySelector("#bg");
-    btnGoogle.addEventListener('click', async  (e)=>{
+    btnGoogle.addEventListener('click',  async (e)=>{
        
     try{
-        let result = await loginWithGoogle()
-        alert('usuario autorizado')
-        next("/home")
+        let result =  await loginWithGoogle()
+        
+       // next("/home")
         
     } catch (error) {
         console.error(error);

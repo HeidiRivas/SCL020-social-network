@@ -1,5 +1,6 @@
 
-import {db, collection, getDocs,addDoc,onSnapshot} from './init.js'
+import { deletePost } from './delete.js';
+import {db, collection, getDocs,addDoc} from './init.js'
 
 
 const savePost = async (data)=> {
@@ -10,7 +11,6 @@ const savePost = async (data)=> {
         console.error("Error adding document: ", e);
       }
 }
-
 
  
 
@@ -24,10 +24,12 @@ const listPost = async ()=> {
   querySnapShot.forEach(doc => {
      html += `
      <div class="postOld">
-      <div> ${doc.data().content}
+    
+      <div>  ${doc.data().content}
+            
       <br>
      <button class="btnedit"></button>
-     <button class="btndel"></button>
+     <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
      <button class="like"></button>
      <button class="unlike"></button>
       </div>
@@ -35,10 +37,19 @@ const listPost = async ()=> {
 
      </div>
     `
+   
   });
  
 taskContainer.innerHTML = html
- 
+
+const btnD= taskContainer.querySelectorAll('#btndel')
+
+console.log()
+btnD.forEach (element =>{
+  element.addEventListener('click', (event)=>{
+ deletePost(event.target.dataset.id)
+  });
+});
   }
   
 

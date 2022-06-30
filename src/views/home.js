@@ -44,12 +44,15 @@ const Home = () => {
       const textArea = container.querySelector('#post').value
       const data={
        content: textArea,
-       like:0
+       like:0,
+       
      }
      savePost(data)
      postNew.reset()
     })
-   
+
+    
+  
 
     return container
 }
