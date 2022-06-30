@@ -1,6 +1,6 @@
 
 import { deletePost } from './delete.js';
-import {db, collection, getDocs,addDoc,onSnapshot} from './init.js'
+import {db, collection, getDocs,addDoc,onSnapshot,doc,query} from './init.js'
 
 
 const savePost = async (data)=> {
@@ -15,13 +15,13 @@ const savePost = async (data)=> {
  
 
 const listPost = async ()=> {
-  const querySnapShot = await getDocs(collection(db, "post"));
- /* onSnapshot(collection(db,'post'),(querySnapShot)=>{}*/
- const taskContainer = document.getElementById("task-container");
-   
- let html = ''
-  querySnapShot.forEach(doc => {
-     html += `
+const q = query(collection(db, "post"));
+ const unsubscribe = onSnapshot(q, (querySnapshot) => {
+   let post = [];
+   const taskContainer = document.getElementById("task-container");
+   querySnapshot.forEach((doc) => {
+       //post.push(doc.data().content);//
+     post += `
      <div class="postOld">
     
       <div class="textbox">  ${doc.data().content} 
@@ -32,24 +32,33 @@ const listPost = async ()=> {
      <button class="like"></button>
      <button class="unlike"></button>
       </div>
-      
-
-
-     </div>
+      </div>
     `
+  });
+  taskContainer.innerHTML = post
+
+  const btnD= taskContainer.querySelectorAll('#btndel');
+  btnD.forEach (element =>{
+    element.addEventListener('click', (event)=>{
+   deletePost(event.target.dataset.id)
    
+    });
   });
 
-taskContainer.innerHTML = html
+   });
 
-const btnD= taskContainer.querySelectorAll('#btndel')
+ 
+   /*const taskContainer = document.getElementById("task-container")
+   const btnD= taskContainer.querySelectorAll('#btndel');
+   console.log(btnD)
+   btnD.forEach (element =>{
+     element.addEventListener('click', (event)=>{
+    deletePost(event.target.dataset.id)
+    //console.log(event.target.dataset.id)
+     });
+   });*/
 
-btnD.forEach (element =>{
-  element.addEventListener('click', (event)=>{
- deletePost(event.target.dataset.id)
-  });
-});
-  }
-  
+ }
 
+ 
 export {savePost,listPost}
