@@ -1,6 +1,6 @@
 
 import { deletePost } from './delete.js';
-import {db, collection, getDocs,addDoc} from './init.js'
+import {db, collection, getDocs,addDoc,onSnapshot} from './init.js'
 
 
 const savePost = async (data)=> {
@@ -16,9 +16,8 @@ const savePost = async (data)=> {
 
 const listPost = async ()=> {
   const querySnapShot = await getDocs(collection(db, "post"));
-  
-  const taskContainer = document.getElementById("task-container");
-  console.log(taskContainer)
+ /* onSnapshot(collection(db,'post'),(querySnapShot)=>{}*/
+ const taskContainer = document.getElementById("task-container");
    
  let html = ''
   querySnapShot.forEach(doc => {
@@ -39,12 +38,11 @@ const listPost = async ()=> {
     `
    
   });
- 
+
 taskContainer.innerHTML = html
 
 const btnD= taskContainer.querySelectorAll('#btndel')
 
-console.log()
 btnD.forEach (element =>{
   element.addEventListener('click', (event)=>{
  deletePost(event.target.dataset.id)
