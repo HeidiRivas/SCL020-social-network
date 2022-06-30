@@ -39,8 +39,7 @@ let btnGoogle = container.querySelector("#bg");
        
     try{
         let result =  await loginWithGoogle()
-        
-       // next("/home")
+               // next("/home")
         
     } catch (error) {
         console.error(error);

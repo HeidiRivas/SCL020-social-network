@@ -98,6 +98,10 @@
 	margin-right: auto;
   }
 
+  .overflow{
+	overflow: auto;
+  }
+
 .postOld{
 	border: 1px solid black;
 	background-color: rgba(255, 255, 255, 0.509);
@@ -109,6 +113,7 @@
 	margin-bottom: 5px;
 	margin-left: auto;
 	margin-right: auto;
+
 }
 .btndel,.btnedit, .unlike, .like {
 	margin-top: 100px;

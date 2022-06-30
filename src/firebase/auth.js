@@ -39,7 +39,7 @@ const result = await signInWithPopup(auth, provider)
     const token = credential.accessToken;
     // The signed-in user info.
     const user = result.user;
-    next("/home")
+      next("/home")
         
     // ...
   }).catch((error) => {
