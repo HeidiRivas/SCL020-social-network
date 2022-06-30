@@ -25,14 +25,15 @@ const listPost = async ()=> {
      html += `
      <div class="postOld">
     
-      <div>  ${doc.data().content}
-            
-      <br>
+      <div class="textbox">  ${doc.data().content} 
+      </div>
+      <div class="btnbox">      
      <button class="btnedit"></button>
      <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
      <button class="like"></button>
      <button class="unlike"></button>
       </div>
+      
 
 
      </div>
