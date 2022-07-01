@@ -25,8 +25,7 @@ const q = query(collection(db, "post"));
      post += `
      <div class="postOld">
     
-      <div class="textbox">   ${doc.data().user} 
-      </div>
+      <div class="textbox">   ${doc.data().user} <br>
       ${doc.data().content} 
       </div>
       <div class="btnbox">      
