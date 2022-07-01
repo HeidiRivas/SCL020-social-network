@@ -1,5 +1,6 @@
 
-import { deletePost } from './delete.js';
+
+import { deletePost,postByEdit } from './delete.js';
 import {db, collection, getDocs,addDoc,onSnapshot,doc,query} from './init.js'
 
 
@@ -24,10 +25,12 @@ const q = query(collection(db, "post"));
      post += `
      <div class="postOld">
     
-      <div class="textbox">  ${doc.data().content} 
+      <div class="textbox">   ${doc.data().user} 
+      </div>
+      ${doc.data().content} 
       </div>
       <div class="btnbox">      
-     <button class="btnedit"></button>
+     <button class="btnedit"  id="btnEdit" data-id= "${doc.id}"></button>
      <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
      <button class="like"></button>
      <button class="unlike"></button>
@@ -44,19 +47,16 @@ const q = query(collection(db, "post"));
    
     });
   });
+  const btnEdit= taskContainer.querySelectorAll('#btnEdit');
+  btnEdit.forEach (element =>{
+    element.addEventListener('click',async (event)=>{
+  const editDoc= await postByEdit(event.target.dataset.id)
+  const task = editDoc.data()
+   console.log(task)
+    });
+  });
+   });//final del onsnapshot
 
-   });
-
- 
-   /*const taskContainer = document.getElementById("task-container")
-   const btnD= taskContainer.querySelectorAll('#btndel');
-   console.log(btnD)
-   btnD.forEach (element =>{
-     element.addEventListener('click', (event)=>{
-    deletePost(event.target.dataset.id)
-    //console.log(event.target.dataset.id)
-     });
-   });*/
 
  }
 

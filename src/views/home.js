@@ -43,6 +43,7 @@ const Home = () => {
       e.preventDefault()
       const textArea = container.querySelector('#post').value
       const data={
+       user:'',
        content: textArea,
        like:0,
        
