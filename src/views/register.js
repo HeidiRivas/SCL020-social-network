@@ -38,13 +38,13 @@ const container = document.createElement('div')
 container.innerHTML = template;
 
 const form = container.querySelector('#register-form')
-form.addEventListener('submit', (e)=> {
+form.addEventListener('submit', async (e)=> {
   e.preventDefault()
   const email = container.querySelector('#email').value
   const password = container.querySelector('#pass').value
   const msg = container.querySelector('#error-msg')
     try{
-        let result = registerNewUser(email, password)
+        let result = await registerNewUser(email, password)
         console.log(result)
         alert('usuario registrado')
         next("/home")

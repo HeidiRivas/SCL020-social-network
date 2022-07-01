@@ -57,19 +57,21 @@ const result = await signInWithPopup(auth, provider)
 
 
 //agregue esta funcion de register me traje el codigo de firebase
-const registerNewUser = (email,password)=> {
+const registerNewUser =async (email,password)=> {
   const auth = getAuth();
   createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    try {
+     const userCredential= await createUserWithEmailAndPassword(auth, email, password)
       // Signed in
       const user = userCredential.user;
+      return userCredential
       // ...
-    })
-    .catch((error) => {
+    }
+    catch(error) {
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
-    });
+    };
   }
 //copie de firebase código de login arriba y en el init ya esta singinwhit...
   const login = async(email, password)=> {

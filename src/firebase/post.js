@@ -50,8 +50,10 @@ const q = query(collection(db, "post"));
   btnEdit.forEach (element =>{
     element.addEventListener('click',async (event)=>{
   const editDoc= await postByEdit(event.target.dataset.id)
-  const task = editDoc.data()
-   console.log(task)
+  const byEdit= editDoc.data();
+  const inputEdit= taskContainer.querySelectorAll('#post');
+ //const y=  taskContainer['inputEdit'].value= byEdit.content;
+ console.log(inputEdit)
     });
   });
    });//final del onsnapshot

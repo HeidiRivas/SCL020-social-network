@@ -1,5 +1,5 @@
 // import {next} from "../router/router.js"
-import {  savePost} from '../firebase/post.js'
+import {  listPost, savePost} from '../firebase/post.js'
 
 
 const Home = () => {
@@ -53,7 +53,7 @@ const Home = () => {
     })
 
     
-  
+  listPost()
 
     return container
 }
