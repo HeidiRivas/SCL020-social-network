@@ -45,6 +45,8 @@ const renderTemplate = () => {
     history.pushState({}, view.name, view.path) 
     renderTemplate()
     listPost()
+  
+    
 }
 
 // const navigate = (path) => { navGuard (next, path, '/login') }//

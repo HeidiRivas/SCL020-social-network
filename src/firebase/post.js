@@ -1,6 +1,7 @@
 
-import { deletePost } from './delete.js';
-import {db, collection, getDocs,addDoc} from './init.js'
+
+import { deletePost,postByEdit } from './delete.js';
+import {db, collection, getDocs,addDoc,onSnapshot,doc,query} from './init.js'
 
 
 const savePost = async (data)=> {
@@ -15,42 +16,49 @@ const savePost = async (data)=> {
  
 
 const listPost = async ()=> {
-  const querySnapShot = await getDocs(collection(db, "post"));
-  
-  const taskContainer = document.getElementById("task-container");
-  // console.log(taskContainer)
-   
- let html = ''
-  querySnapShot.forEach(doc => {
-     html += `
+const q = query(collection(db, "post"));
+ const unsubscribe = onSnapshot(q, (querySnapshot) => {
+   let post = [];
+   const taskContainer = document.getElementById("task-container");
+   querySnapshot.forEach((doc) => {
+       //post.push(doc.data().content);//
+     post += `
      <div class="postOld">
     
-      <div>  ${doc.data().content}
-            
-      <br>
-     <button class="btnedit"></button>
+      <div class="textbox">   ${doc.data().user} 
+      </div>
+      ${doc.data().content} 
+      </div>
+      <div class="btnbox">      
+     <button class="btnedit"  id="btnEdit" data-id= "${doc.id}"></button>
      <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
      <button class="like"></button>
      <button class="unlike"></button>
       </div>
-
-
-     </div>
+      </div>
     `
+  });
+  taskContainer.innerHTML = post
+
+  const btnD= taskContainer.querySelectorAll('#btndel');
+  btnD.forEach (element =>{
+    element.addEventListener('click', (event)=>{
+   deletePost(event.target.dataset.id)
    
+    });
   });
+  const btnEdit= taskContainer.querySelectorAll('#btnEdit');
+  btnEdit.forEach (element =>{
+    element.addEventListener('click',async (event)=>{
+  const editDoc= await postByEdit(event.target.dataset.id)
+  const task = editDoc.data()
+   console.log(task)
+    });
+  });
+   });//final del onsnapshot
+
+
+ }
+
  
-taskContainer.innerHTML = html
-
-const btnD= taskContainer.querySelectorAll('#btndel')
-
-console.log()
-btnD.forEach (element =>{
-  element.addEventListener('click', (event)=>{
- deletePost(event.target.dataset.id)
-  });
-});
-  }
-  
-
 export {savePost,listPost}

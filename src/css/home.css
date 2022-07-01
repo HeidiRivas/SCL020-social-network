@@ -102,23 +102,26 @@
 	border: 1px solid black;
 	background-color: rgba(255, 255, 255, 0.509);
 	width: 300px;
-	height: 150px;
-	padding: 5px;
+	height: fit-content;
+	padding: 10px;
 	border-radius: 10px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: auto;
 	margin-right: auto;
-	/* float: center;
-    display: flex;
-    align-items: center;
-    word-break:break-all;
-	overflow: auto; */
+	flex-direction: row;
+}
+.textbox {
+	text-align: justify;
+	align-self: flex-start;
 
 }
-.btndel,.btnedit, .unlike, .like {
-	margin-top: 100px;
+.btnbox {
+	display: block;
+	align-self: flex-end;
+	justify-self: right;
 }
+
   /* Mobile menu */
   .menu {
 	display: flex;
@@ -182,7 +185,6 @@
 	}
 	.postOld {
 		width: 350px;
-		height: 150px;
 	}
   }
   /* Desktop menu */
@@ -214,24 +216,21 @@
 	}
 	.postOld {
 		width: 550px;
-		height: 250px;
 		margin-top: 10px;
 		margin-bottom: 10px;
 	}
 	.btndel,.btnedit, .like {
-		margin-top: 200px;
 		height: 30px;
 		width: 30px;
 		background-size: 25px 25px;
 	}
 	.unlike {
-		margin-top: 200px;
 		height: 30px;
 		width: 30px;
 		background-size: 20px 20px;
 	}
-	.btnedit {
+	/* .btnedit {
 		margin-left: 400px;
-	}
+	} */
   }
 

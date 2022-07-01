@@ -7,7 +7,7 @@ const Home = () => {
     const template = //html
     `           <nav>
     <ul class="menu">
-      <li class="logo"><a href="#"><img alt=""></a></li>
+      <li class="logo"><a href="#"><img href="/" ></a></li>
       <li class="item"><a class="acolor" href="#">Home</a></li>
       <li class="item"><a class="acolor" href="#">Grupos</a></li>
       <li class="item"><a class="acolor" href="#">Eventos</a></li>
@@ -43,6 +43,7 @@ const Home = () => {
       e.preventDefault()
       const textArea = container.querySelector('#post').value
       const data={
+       user:'',
        content: textArea,
        like:0,
        
