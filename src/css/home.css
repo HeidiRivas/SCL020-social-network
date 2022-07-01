@@ -117,9 +117,10 @@
 
 }
 .btnbox {
+	padding-top: 2%;
 	display: block;
 	align-self: flex-end;
-	justify-self: right;
+	text-align: right;
 }
 
   /* Mobile menu */
