@@ -20,6 +20,7 @@ const q = query(collection(db, "post"));
  const unsubscribe = onSnapshot(q, (querySnapshot) => {
    let post = [];
    const taskContainer = document.getElementById("task-container");
+  
    querySnapshot.forEach((doc) => {
        //post.push(doc.data().content);//
      post += `
@@ -50,10 +51,11 @@ const q = query(collection(db, "post"));
   btnEdit.forEach (element =>{
     element.addEventListener('click',async (event)=>{
   const editDoc= await postByEdit(event.target.dataset.id)
-  const byEdit= editDoc.data();
-  const inputEdit= taskContainer.querySelectorAll('#post');
- //const y=  taskContainer['inputEdit'].value= byEdit.content;
- console.log(inputEdit)
+  const byEdit= editDoc.data().content;
+  const containerPost = document.getElementById("post");
+  const y = containerPost.innerHTML = byEdit;
+  console.log(y)
+  
     });
   });
    });//final del onsnapshot
