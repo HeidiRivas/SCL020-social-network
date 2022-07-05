@@ -47,17 +47,31 @@ const q = query(collection(db, "post"));
    
     });
   });
-  const btnEdit= taskContainer.querySelectorAll('#btnEdit');
-  btnEdit.forEach (element =>{
-    element.addEventListener('click',async (event)=>{
-  const editDoc= await postByEdit(event.target.dataset.id)
-  const byEdit= editDoc.data().content;
-  const containerPost = document.getElementById("post");
-  const y = containerPost.innerHTML = byEdit;
-  console.log(y)
-  
+  const taskContainer2 = document.getElementById("task-container");
+  const btnedit = taskContainer2.querySelectorAll("#btnEdit");
+  btnedit.forEach(element => {
+    element.addEventListener("click", (event)=>{
+      console.log(event.target)
+      taskContainer2.querySelectorAll(".textbox").removeAttribute("readonly");
     });
-  });
+    
+      
+    })
+  
+  
+
+ 
+  // const btnEdit= taskContainer.querySelectorAll('#btnEdit');
+  // btnEdit.forEach (element =>{
+  //   element.addEventListener('click',async (event)=>{
+  // // const editDoc= await postByEdit(event.target.dataset.id)
+  // const byEdit= editDoc.data().content;
+  // const containerPost = document.getElementById("post");
+  // const y = containerPost.innerHTML = byEdit;
+  // console.log(y)
+  
+  //   });
+  // });
    });//final del onsnapshot
 
 
