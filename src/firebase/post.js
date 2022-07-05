@@ -31,6 +31,7 @@ const q = query(collection(db, "post"));
       </textarea>
       <div class="btnbox">      
      <button class="btnedit"  id="btnEdit" data-id= "${doc.id}"></button>
+     <button class="save" id="save"></button>
      <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
      <button class="like"></button>
      <button class="unlike"></button>
