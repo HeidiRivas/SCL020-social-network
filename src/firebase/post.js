@@ -26,7 +26,7 @@ const q = query(collection(db, "post"));
      post += `
      <div class="postOld">
     
-      <textarea class="textbox" id="textbox" readonly>   ${doc.data().user} 
+      <textarea class="textbox" id="textbox-${doc.id}" readonly>   ${doc.data().user} 
       ${doc.data().content} 
       </textarea>
       <div class="btnbox">      
@@ -38,6 +38,7 @@ const q = query(collection(db, "post"));
       </div>
     `
   });
+  
   taskContainer.innerHTML = post
 
   const btnD= taskContainer.querySelectorAll('#btndel');
@@ -52,7 +53,7 @@ const q = query(collection(db, "post"));
   btnedit.forEach(element => {
     element.addEventListener("click", (event)=>{
       console.log(event.target)
-      taskContainer2.querySelectorAll(".textbox").removeAttribute("readonly");
+      document.getElementById("textbox-" +event.target.dataset.id ).removeAttribute("readonly");
     });
     
       

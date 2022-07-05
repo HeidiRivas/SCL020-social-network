@@ -25,7 +25,6 @@ jest.mock('../src/firebase/init.js', () => ({
 describe('Test Auth', () => {
   const mail = "probando@gmail.com";
   const pass = "qwerty";
-  
   it('must call registerNewUser ', async () => {
     await registerNewUser(mail, pass);
     await addDoc(collection(db, "user"))
