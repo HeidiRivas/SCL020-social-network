@@ -26,9 +26,9 @@ const q = query(collection(db, "post"));
      post += `
      <div class="postOld">
     
-      <div class="textbox">   ${doc.data().user} <br>
+      <textarea class="textbox" id="textbox" readonly>   ${doc.data().user} 
       ${doc.data().content} 
-      </div>
+      </textarea>
       <div class="btnbox">      
      <button class="btnedit"  id="btnEdit" data-id= "${doc.id}"></button>
      <button class="btndel" id="btndel" data-id= "${doc.id}"></button>

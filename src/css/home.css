@@ -111,11 +111,14 @@
 	margin-right: auto;
 	flex-direction: row;
 }
-.textbox {
+.textbox, #textbox {
 	text-align: justify;
 	align-self: flex-start;
+	resize: none;
+	height: fit-content;
 
 }
+
 .btnbox {
 	padding-top: 2%;
 	display: block;
@@ -180,6 +183,16 @@
 	#post {
 		width: 350px;
 		height: 150px;
+	}
+
+	#textbox {
+
+		width: 350px;
+		height: 250px;
+		border-radius: 15px;
+		padding: 5px;
+		text-align: center;
+
 	}
 	#newPost {
 		margin-left: 55%;
