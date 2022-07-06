@@ -46,7 +46,7 @@
   }
   .register___input-row {
     margin-top: 5%;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
   }
 
   .register {
@@ -73,6 +73,12 @@
       background-color: aliceblue;
   
   }
+  #name::placeholder{
+    color:rgb(29, 139, 130);
+    font-family: 'Nunito', sans-serif;
+    background-color: aliceblue;
+
+}
     #pass::placeholder{
     color:rgb(29, 139, 130);
     font-family: 'Nunito', sans-serif;
@@ -90,6 +96,16 @@
         /* border: 1px solid red; */
       }
       #email_formu {
+        font-family: 'Nunito', sans-serif;
+      }
+
+      #name_formu:active,
+      #name_formu:focus {
+        outline-color: rgb(37, 177, 182);
+        /*Borde sin accion */
+        /* border: 1px solid red; */
+      }
+      #name_formu {
         font-family: 'Nunito', sans-serif;
       }
   /*     
