@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, db,collection, addDoc }  from '../src/firebase/init.js';
+import { createUserWithEmailAndPassword }  from '../src/firebase/init.js';
 import { registerNewUser } from '../src/firebase/auth.js';
-import { next, initRouter} from '../src/router/router.js';
+
 
 jest.mock('../src/firebase/init.js', () => ({
   auth: jest.fn(),
@@ -21,6 +21,7 @@ jest.mock('../src/firebase/init.js', () => ({
   query: jest.fn(() => {
     console.log('llamamos al getAuth mockeado')
   }),
+  onSnapshot: jest.fn()
 }));
 
 /**
@@ -30,9 +31,9 @@ jest.mock('../src/firebase/init.js', () => ({
 describe('Test Auth', () => {
   const mail = "probando@gmail.com";
   const pass = "qwerty";
-  it('must call registerNewUser ', async () => {
+  it('try registerNewUser ', async () => {
     await registerNewUser(mail, pass);
-    await addDoc(collection(db, "user"))
-    expect(registerNewUser).toHaveBeenCalled();
+    expect(createUserWithEmailAndPassword).toHaveBeenCalled()
+    expect(createUserWithEmailAndPassword).toHaveBeenCalledTimes(1)
   });
 });

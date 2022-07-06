@@ -1,8 +1,8 @@
 
 
 import { deletePost, postByEdit } from './delete.js';
-import { db, collection, getDocs, addDoc, onSnapshot, doc, query } from './init.js'
-import { editPost } from "./firestore.js"
+import { db, collection, getDocs, addDoc, onSnapshot, doc, query,auth } from './init.js'
+import { editPost,likePost } from "./firestore.js"
 
 const savePost = async (data) => {
   try {
@@ -23,7 +23,7 @@ const listPost = async () => {
 
     querySnapshot.forEach((doc) => {
       //post.push(doc.data().content);//
-      console.log(doc.data().content)
+    
       post += `
      <div class="postOld">
     
@@ -34,8 +34,8 @@ const listPost = async () => {
      <button class="btnedit"  id="btnEdit" data-id= "${doc.id}"></button>
      <button class="save" id="save"></button>
      <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
-     <button class="like"></button>
-     <button class="unlike"></button>
+     <button class="like" value= "${doc.id}"></button>
+     <span id="like-count" class="like-count"> ${doc.numberLike}Me gusta</span>
       </div>
       </div>
     `
@@ -80,13 +80,35 @@ const listPost = async () => {
       element.addEventListener("click", (e) => {
         const id = editButton.dataset.id;
         const content = document.getElementById("textbox-" + id).value
-
-        console.log(content)
-
-        editPost(id,  content);
+            editPost(id,  content);
       })
     });
 
+    const btnLike = document.querySelectorAll('.like');
+    
+    btnLike.forEach(like =>{
+        like.addEventListener('click', () => {
+          // id = e.target.dataset.id;
+           
+            //const idLike = e.target.dataset.id;
+            const userId =auth.currentUser.uid;
+            likePost(like.value, userId);
+            
+      });
+    });
+/*const btnLike = document.querySelectorAll('.like');
+console.log(btnLike)
+btnLike.forEach(element =>{
+  element.addEventListener('click', (e)=>{
+    saveLike(data)
+   // addLike(e.target.dataset.id)
+    //addLike() obtener el registro del post que queremos modificar
+    //añadir el id del usuario actual al arreglo de like
+    //actualizar el registro en firebase
+    //ojo poner el data-id a este botón para poder ejecutarlo
+  })
+  
+})*/
 
     // const btnEdit= taskContainer.querySelectorAll('#btnEdit');
     // btnEdit.forEach (element =>{

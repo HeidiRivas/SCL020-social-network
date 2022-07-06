@@ -59,7 +59,7 @@ const result = await signInWithPopup(auth, provider)
 //agregue esta funcion de register me traje el codigo de firebase
 const registerNewUser =async (email,password)=> {
   const auth = getAuth();
-  createUserWithEmailAndPassword(auth, email, password)
+  //createUserWithEmailAndPassword(auth, email, password)
     try {
      const userCredential= await createUserWithEmailAndPassword(auth, email, password)
       // Signed in

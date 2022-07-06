@@ -15,6 +15,7 @@
 	border-radius: 50%;
 	box-shadow: 0 8px 8px rgba(0, 0, 0, 0.16), 0 8px 8px rgba(0, 0, 0, 0.23);
 	border-color: #3BACB6;
+	/*display: none;*/
 }
 .save {
 	background-image:url('../img/save.png');

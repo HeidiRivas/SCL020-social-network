@@ -1,7 +1,7 @@
 
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js'
 import { getAuth, signInWithEmailAndPassword,signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-auth.js";
-import  {getFirestore, collection, getDocs,addDoc,deleteDoc,doc,onSnapshot,query,getDoc, updateDoc} from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js'
+import  {getFirestore, collection, getDocs,addDoc,deleteDoc,doc,onSnapshot,query,getDoc, updateDoc,arrayRemove,arrayUnion} from 'https://www.gstatic.com/firebasejs/9.8.1/firebase-firestore.js'
 
 import config from './config.js'
 
@@ -11,7 +11,7 @@ const auth = getAuth();
 const db = getFirestore(inicta)
 
 export { initializeApp, signInWithEmailAndPassword, auth,signInWithPopup, GoogleAuthProvider,getAuth, createUserWithEmailAndPassword }
-export{db,collection, getDocs,addDoc,deleteDoc,doc,onSnapshot,query,getDoc, updateDoc}
+export{db,collection, getDocs,addDoc,deleteDoc,doc,onSnapshot,query,getDoc, updateDoc,arrayRemove,arrayUnion}
 
 //agregre  createUserWithEmailAndPassword en la importación y exportación del auth
 

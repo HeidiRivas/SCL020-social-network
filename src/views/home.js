@@ -1,6 +1,6 @@
 // import {next} from "../router/router.js"
 import {  listPost, savePost} from '../firebase/post.js'
-
+import{auth} from '../firebase/init.js'
 
 const Home = () => {
 
@@ -43,12 +43,16 @@ const Home = () => {
   postNew.addEventListener('submit', (e)=> {
       e.preventDefault()
       const textArea = container.querySelector('#post').value
+
       const data={
        user:'',
        content: textArea,
-       like:0,
-       
+       userId:auth.currentUser.uid,
+       like:[],
+       numberLike:0,
+
      }
+     console.log(data)
      savePost(data)
      postNew.reset()
     })

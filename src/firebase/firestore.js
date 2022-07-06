@@ -1,5 +1,5 @@
 
-import {db,deleteDoc,doc,getDoc, updateDoc} from  './init.js'
+import {db,deleteDoc,doc,getDoc, updateDoc,auth,arrayRemove,arrayUnion} from  './init.js'
 
 const saveUserName = async (data)=> {
   try {
@@ -10,6 +10,14 @@ const saveUserName = async (data)=> {
     }
 }
 
+/*const saveLike = async (data) => {
+  try {
+    const docRef = await addDoc(collection(db, "post","like"), data)
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}*/
 const deletePost = (id)=> {
 
     
@@ -37,7 +45,35 @@ await updateDoc(postRef, {
   content: content,
 });
 }
-  export {deletePost, postByEdit,editPost}
-
  
+const likePost = async (id, userId)=>{
+  const postRef = doc(db,'post',id);
+  const docLike = await getDoc(postRef);
+  const dataLike = docLike.data();
+  const likesCount = dataLike.numberLike;
+  console.log(likesCount)
+  if((dataLike.like).includes(userId)){
+   await updateDoc(postRef,{
+like:arrayRemove(userId),
+numberLike: likesCount  -1,
+   });
+  }else{
+    await updateDoc(postRef,{
+     like:arrayUnion(userId),
+     numberLike: likesCount  +1,
+    });
+  }
+ }
+
+
+
+ /*const addLike = async (id) =>{
+  const postRef = doc(db, "post", id);
+
+  //Set the "content" field of the 'post'.
+  await updateDoc(postRef, {
+    like: [...postRef.like, auth.currentUser.uid]
+  });
+ }*/
+ export {deletePost, postByEdit,editPost,likePost}
   
