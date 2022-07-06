@@ -16,6 +16,7 @@ const savePost = async (data)=> {
  
 
 const listPost = async ()=> {
+  console.log(query)
 const q = query(collection(db, "post"));
  const unsubscribe = onSnapshot(q, (querySnapshot) => {
    let post = [];

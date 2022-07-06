@@ -1,5 +1,5 @@
-import { initializeApp, signInWithEmailAndPassword, auth,signInWithPopup, GoogleAuthProvider,getAuth, createUserWithEmailAndPassword, db,collection, getDocs,addDoc,deleteDoc,doc,onSnapshot,query,getDoc }  from '../src/firebase/init.js';
-import { login,loginWithGoogle,registerNewUser } from '../src/firebase/auth.js';
+import { createUserWithEmailAndPassword, db,collection, addDoc }  from '../src/firebase/init.js';
+import { registerNewUser } from '../src/firebase/auth.js';
 import { next, initRouter} from '../src/router/router.js';
 
 jest.mock('../src/firebase/init.js', () => ({
@@ -7,7 +7,9 @@ jest.mock('../src/firebase/init.js', () => ({
   signInWithEmailAndPassword: jest.fn(),
   signOut: jest.fn(),
   GoogleAuthProvider: jest.fn(),
-  getAuth: jest.fn(),
+  getAuth: jest.fn(() => {
+    console.log('llamamos al getAuth mockeado')
+  }),
   initializeApp: jest.fn(),
   createUserWithEmailAndPassword: jest.fn(),
   provider: jest.fn(),
@@ -16,6 +18,9 @@ jest.mock('../src/firebase/init.js', () => ({
   collection:jest.fn(),
   db:jest.fn(),
   Timestamp :jest.fn(),
+  query: jest.fn(() => {
+    console.log('llamamos al getAuth mockeado')
+  }),
 }));
 
 /**
