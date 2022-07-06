@@ -1,5 +1,5 @@
 
-import {db,deleteDoc,doc,getDoc} from  './init.js'
+import {db,deleteDoc,doc,getDoc, updateDoc} from  './init.js'
 
 const saveUserName = async (data)=> {
   try {
@@ -28,4 +28,16 @@ const postByEdit = async (id)=>{
       console.log("No such document!");
     }
 }
-  export {deletePost, postByEdit}
+const editPost = async (id,content)=>{
+
+const postRef = doc(db, "post", id);
+
+//Set the "content" field of the 'post'.
+await updateDoc(postRef, {
+  content: content,
+});
+}
+  export {deletePost, postByEdit,editPost}
+
+ 
+  
