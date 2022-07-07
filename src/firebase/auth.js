@@ -88,7 +88,7 @@ const registerNewUser =async (email,password)=> {
       catch(error) {
         const errorCode = error.code;
         const errorMessage = error.message;
-        throw new Error(errorMessage)
+        // throw new Error(errorMessage)
       }; 
     
 }

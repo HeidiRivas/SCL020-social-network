@@ -25,22 +25,6 @@ const listPost = async () => {
       post += //html
         `<div class="postOld">
     
-<<<<<<< HEAD
-      post += `
-     <div class="postOld">
-    
-      <textarea class="textbox" id="textbox-${doc.id}" readonly>   ${doc.data().user} 
-      ${doc.data().content} 
-      </textarea>
-      <div class="btnbox">      
-     <button class="btnedit"  id="btnEdit" data-id= "${doc.id}"></button>
-     <button class="save" id="save"></button>
-     <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
-     <button class="like" value= "${doc.id}"></button>
-     <span id="like-count" class="like-count"> ${doc.data().numberLike}Me gusta</span>
-      </div>
-      </div>
-=======
         <textarea class="textbox" id="textbox-${doc.id}" readonly>   ${doc.data().user} 
         ${doc.data().content} 
         </textarea>
@@ -49,10 +33,9 @@ const listPost = async () => {
         <button class="save" id="save"></button>
         <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
         <button class="like" value= "${doc.id}"></button>
-        <span id="like-count" class="like-count"> ${doc.numberLike}Me gusta</span>
+        <span id="like-count" class="like-count"> ${doc.data().numberLike} Me gusta</span>
         </div>
         </div>
->>>>>>> 24e2327b51994c7a390d99e65173d80e5ec397ef
     `
     });
 
@@ -61,7 +44,7 @@ const listPost = async () => {
     const btnD = taskContainer.querySelectorAll('#btndel');
     btnD.forEach(element => {
       element.addEventListener('click', (event) => {
-
+        alert("¿Seguro deseas borrar el post?")
         deletePost(event.target.dataset.id)
 
       });
