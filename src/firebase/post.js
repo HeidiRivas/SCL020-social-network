@@ -33,7 +33,7 @@ const listPost = async () => {
         <button class="save" id="save"></button>
         <button class="btndel" id="btndel" data-id= "${doc.id}"></button>
         <button class="like" value= "${doc.id}"></button>
-        <span id="like-count" class="like-count"> ${doc.numberLike}Me gusta</span>
+        <span id="like-count" class="like-count"> ${doc.data().numberLike} Me gusta</span>
         </div>
         </div>
     `
@@ -44,7 +44,7 @@ const listPost = async () => {
     const btnD = taskContainer.querySelectorAll('#btndel');
     btnD.forEach(element => {
       element.addEventListener('click', (event) => {
-
+        alert("¿Seguro deseas borrar el post?")
         deletePost(event.target.dataset.id)
 
       });

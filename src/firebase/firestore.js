@@ -20,8 +20,8 @@ const saveUserName = async (data)=> {
 }*/
 const deletePost = (id)=> {
 
-    
-    deleteDoc(doc(db,'post',id));
+    const postRef= (doc(db,'post',id));
+    deleteDoc(postRef);
    
   }
 
