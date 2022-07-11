@@ -36,7 +36,8 @@ const renderTemplate = () => {
     const view = routes.filter(route => route.path === window.location.pathname)[0]
     const container = document.getElementById('app')
     container.innerHTML = ''
-    container.appendChild(view.template)
+    container.appendChild(view.template) //para agregar el template
+    
     
 }
 
