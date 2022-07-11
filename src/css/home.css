@@ -138,6 +138,7 @@
 	margin-right: auto;
 	flex-direction: row;
 	overflow: hidden;
+	padding: inherit;
 	
 
 }
@@ -156,6 +157,7 @@
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
+	
   }
   .toggle {
 	order: 1;
@@ -191,6 +193,7 @@
   @media all and (min-width: 600px) {
 	.menu {
 	  justify-content: center;
+	  
 	}
 	.logo {
 	  flex: 1;
@@ -262,7 +265,7 @@
 		width: 30px;
 		background-size: 25px 25px;
 	}
-	.unlike {
+	.unlike, .save {
 		height: 30px;
 		width: 30px;
 		background-size: 20px 20px;
