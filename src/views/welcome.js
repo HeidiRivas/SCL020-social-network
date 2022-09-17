@@ -43,7 +43,7 @@ let btnGoogle = container.querySelector("#bg");
         
     } catch (error) {
         console.error(error);
-         //throw error.message
+        //  throw error.message
         }
     
 });
